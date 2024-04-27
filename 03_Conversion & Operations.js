@@ -51,3 +51,7 @@ console.log("Converting non-empty string to Bool and checking type        " + "{
 let anyNumber = 21
 let convertString = String(anyNumber)// here printing the value in terminal won't show that it has been converted to string, but u can check it's datatype using typeof
 console.log("Converting number to string                                    " + "{ " + convertString + " " + typeof convertString + " }")
+
+
+
+//Operatons
