@@ -1,3 +1,10 @@
+// const abc = "ABC"
+// console.log(abc.);
+
+// const adc = new String("ADB")
+// console.log(adc.);
+//The above code is used to see the methods available normally and while using a instance of a string object
+
 const name = "ABC"
 const repoCount = 20
 
