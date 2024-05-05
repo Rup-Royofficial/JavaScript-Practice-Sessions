@@ -15,7 +15,7 @@ const mySym = Symbol("key1")
 const JsUser = {
     name: "ABC",
     "full name": "ABC DEF",
-    [mySym]: "mykey1",
+    [mySym]: "mykey1", // this is how you use Symbols inside objects [name_of_symbol] 
     age: 108,
     location: "Alaska",
     email: "abc@yahoo.com",
@@ -26,13 +26,19 @@ const JsUser = {
 console.log(JsUser.email)
 console.log(JsUser["email"])// this is another way of referencing or using the keys inside an object
 console.log(JsUser["full name"]) // for keys , which are larger than two words, you have to use the form of using quotes to make keys "" : ""
-console.log(JsUser[mySym]) // This is the way of using symbols
+console.log(JsUser[mySym]) // This is the way of using symbols which are declared inside the objects
 
-JsUser.email = "hitesh@chatgpt.com"
-// Object.freeze(JsUser)
-JsUser.email = "hitesh@microsoft.com"
+JsUser.email = "abc@chatgpt.com" // This is the way you can make changes to values within the objects
+
+/*
+Object.freeze() as the name suggests, freezes an object, which means any changes to that specific object is not possible
+Object.freeze(JsUser) has freezed the object JsUser, and the next line will not account any changes
+ */ 
+
+JsUser.email = "abc@microsoft.com"
 // console.log(JsUser);
 
+// U can initialize an function within a object too, but remember to run this functions like this, u can't just simply call this function like 'JsUser.function', since it is a method now, call has to be like : 'JsUser.function()'
 JsUser.greeting = function(){
     console.log("Hello JS user");
 }
@@ -41,6 +47,6 @@ JsUser.greetingTwo = function(){
 }
 
 console.log(JsUser.greeting());
-console.log(JsUser.greetingTwo());
+console.log(JsUser.greetingTwo()); // remember the way to call this is 'Object.functionName()'
 
 
