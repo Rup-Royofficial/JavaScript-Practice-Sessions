@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+
+
+    !Finding HTML Elements:
+
+                            Method	                                          Description
+                    document.getElementById(id)	            =>           Find an element by element id
+                    document.getElementsByTagName(name)	    =>           Find elements by tag name
+                    document.getElementsByClassName(name)	=>           Find elements by class name
+
+
+    !Changing HTML Elements: 
+                            Property	                                      Description
+                    element.innerHTML =  new html content   =>        	 Change the inner HTML of an element
+                    element.attribute = new value           =>	         Change the attribute value of an HTML element
+                    element.style.property = new style      =>    	     Change the style of an HTML element       
+                    
+                    
+
+
+    !Adding and Deleting Elements:
+
+                            Method	                                          Description
+
+                    document.createElement(element)	        =>           Create an HTML element
+                    document.removeChild(element)	        =>           Remove an HTML element
+                    document.appendChild(element)	        =>           Add an HTML element
+                    document.replaceChild(new, old)	        =>           Replace an HTML element
+                    document.write(text)	                =>           Write into the HTML output stream        
+
+
+
+    !You can use the three properties innerHTML, innerText, and textContent to manipulate the content of DOM elements. But they behave differently. Understanding them will help you decide when it's appropriate to use each one.
+    !The innerHTML property recognizes HTML tags and renders the content according to the tags. innerText and textContent ignore HTML tags and treat them as part of the text. You also learned in this article how innerHTML can lead to security risks and why you should be mindful of this.
+    !Also, innerText reads content as it appears on screen, ignores hidden content, and observes formatting of text. But textContent reads content as it appears in the markup. This means it reads hidden content too. But it also ignores formatting like whitespaces and line breaks when you are using it set content.
+ -->
