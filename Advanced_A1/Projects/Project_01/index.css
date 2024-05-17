@@ -2,18 +2,25 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    height: 100vw;
+    width: 100vw;
     background-color: #212121;
     color: snow;
 }
 
-body {
-    height: 100%;
-    width: 100%;
-}
-
 .main-heading{
     margin-top: 2rem;
+    margin-bottom: 1rem;
     display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    margin-top: 5rem;
+    display:flex;
     align-items: center;
     justify-content: center;
 }
@@ -22,4 +29,30 @@ body {
     background-color: black;
     width: 5rem;
     height: 5rem;
+    display: inline-block;
+    margin: 1rem;
+}
+
+#purple {
+    background-color: purple;
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    margin: 1rem;
+}
+
+#blue {
+    background-color: blue;
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    margin: 1rem;
+}
+
+#yellow {
+    background-color: yellow;
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    margin: 1rem;
 }
