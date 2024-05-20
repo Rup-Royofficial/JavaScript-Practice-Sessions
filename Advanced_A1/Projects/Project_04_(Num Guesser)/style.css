@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: turquoise;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+    padding: 2vw;
+    background-color: turquoise;
+    color: #212121;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17vw;
+}

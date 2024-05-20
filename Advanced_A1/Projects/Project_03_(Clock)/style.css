@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: greenyellow;
+}
+
+
+.nav-heading {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 3rem  0;
+    font-size: 4.5rem;
+    font-weight: 800;
+    background-color: greenyellow;
+    color: #212121;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-container {
+    background-color: greenyellow;
+    color: #212121;
+    width: 50vw;
+    height: 10vw;
+    margin-top: 15vw;
+    border-radius: 55px 20px;
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 3rem;
+    font-weight: 600;
+}
