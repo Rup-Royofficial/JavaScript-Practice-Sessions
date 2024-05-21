@@ -36,7 +36,7 @@ Reusability: You can reuse the same input elements in different parts of your co
 
 
 ***
-*The reason to not write that alongweith form is bacause, during that scenrario, whenever the page is loaded, the empty input would get stored in the const
+*The reason to not write that alongweith form is because, during that scenrario, whenever the page is loaded, the empty input would get stored in the const
 !Resultant ouput will always be NaN
 ***
 
