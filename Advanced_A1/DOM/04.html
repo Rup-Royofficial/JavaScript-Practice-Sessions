@@ -12,36 +12,100 @@
     </ul>
 </body>
 <script>
+    // One way to add elements to the DOM
+    // Here a function is created so that many li can be created by just calling the func and passing the arguments, rather than hard coding numerous li elements
     function addLanguage(langName){
         const li = document.createElement('li');
         li.innerHTML = `${langName}`
-        document.querySelector('.language').appendChild(li)
+        document.querySelector('.language').appendChild(li) // appendChild() will actually append it to the actual DOM element thus all the changes get displayed on the page, rather than just in the terminal
     }
     addLanguage("python")
     addLanguage("typescript")
+    /*
+        . Javascript
+        . python
+        . typescript
+    */
 
+
+    // Alternate form of adding elements to the DOMin respect to the above form
     function addOptiLanguage(langName){
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(langName))
         document.querySelector('.language').appendChild(li)
     }
     addOptiLanguage('golang')
+    /*
+        . Javascript
+        . python
+        . typescript
+        . golang
+    */
+
+
+
+
 
     //Edit
     const secondLang = document.querySelector("li:nth-child(2)")
-    console.log(secondLang);
-    //secondLang.innerHTML = "Mojo"
+    console.log(secondLang); // <li>python</li>
+
+
+    secondLang.innerHTML = "Mojo" // <li>Mojo</li>
+    /*
+        . Javascript
+        . Mojo
+        . typescript
+        . golang
+    */
+
     const newli = document.createElement('li')
-    newli.textContent = "Mojo"
-    secondLang.replaceWith(newli)
+    newli.textContent = "Dojo"
+    document.querySelector('.language').appendChild(newli)
+    /*
+        . Javascript
+        . Mojo
+        . typescript
+        . golang
+        . Dojo
+    */
+
+    secondLang.replaceWith(newli) // rather than replacing and making a duplicate Dojo,it completely removes the Mojo element and in its place , comes the Dojo element
+    /*
+        . Javascript
+        . Dojo
+        . typescript
+        . golang
+    */
+
+
+
+
 
     //edit
     const firstLang = document.querySelector("li:first-child")
-    firstLang.outerHTML = '<li>TypeScript</li>'
+    firstLang.outerHTML = '<li>TypeScript</li>' 
+    /*
+        . TypeScript
+        . Dojo
+        . typescript
+        . golang
+    */
+    // Remember why appendChild() is not used in this cases, because the elements are already added in the DOM,
+    // these are just forms of editing the content inside the element
+
+
+
+
 
     //remove
     const lastLang = document.querySelector('li:last-child')
-    lastLang.remove()
+    lastLang.remove() // as the name suggests this method removes an element from the DOM
+    /*
+        . TypeScript
+        . Dojo
+        . typescript
+    */
 
 
 </script>
