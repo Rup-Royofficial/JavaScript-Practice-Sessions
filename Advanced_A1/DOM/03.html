@@ -10,17 +10,46 @@
     
 </body>
 <script>
-    const div = document.createElement('div')
-    console.log(div);
-    div.className = "main"
-    div.id = Math.round(Math.random() * 10 + 1)
-    div.setAttribute("title", "generated title")
-    div.style.backgroundColor = "green"
-    div.style.padding = "12px"
-    // div.innerText = "abcDEF"
-    const addText = document.createTextNode("abcDEF")
-    div.appendChild(addText)
+    // This is a representation of creating HTML elements using JS as well as assigning values & other properties to it using JS 
+    // Remember all this creation and build of documents in JS is of no use if u don't write the last line .line 47
 
-    document.body.appendChild(div)
+    const div = document.createElement('div')
+    console.log(div); // <div></div>
+
+    div.className = "main"
+    console.log(div); // <div class="main"></div>
+
+    div.id = Math.round(Math.random() * 10 + 1)
+    console.log(div); // <div class="main" id="4, this id will be random between 1-11, "></div>
+
+
+    div.setAttribute("title", "generated title")
+    console.log(div); // <div class="main" id="10" title="generated title"></div>
+
+
+    div.style.backgroundColor = "green"
+    console.log(div); // <div class="main" id="7" title="generated title" style="background-color: green;"></div>
+
+
+    div.style.padding = "12px"
+    console.log(div); // <div class="main" id="7" title="generated title" style="background-color: green; padding: 12px;"></div>
+
+    
+    // Two forms of adding texts/value to the HTML element
+    // 1)
+    div.innerText = "abcDEF"
+    console.log(div); // <div class="main" id="6" title="generated title" style="background-color: green; padding: 12px;">abcDEF</div>
+
+    // 2)
+    const addText = document.createTextNode("ghiJKL")
+    div.appendChild(addText) // <div class="main" id="2" title="generated title" style="background-color: green; padding: 12px;">abcDEFghiJKL</div>
+
+
+    /*  This is the most important line in regards to the above changes, without this below line, 
+        all the above changes and builds will be only displayed in the console
+        and not in the actual body of the HTML page itself */
+
+
+    document.body.appendChild(div)// after this line, the whole changes done and the div element created is added to the body and thus the result is displayed on the screen 
 </script>
 </html>
