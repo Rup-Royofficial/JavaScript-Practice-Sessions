@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    
+    //This onClick function gives a alert dialogbox to the user on clicking on the image with the id as owl
+    document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    }
+
+
+
+    /* attachEvent()
+     jQuery - on
+
+     type, timestamp, defaultPrevented
+     target, toElement, srcElement, currentTarget,
+     clientX, clientY, screenX, screenY
+     altkey, ctrlkey, shiftkey, keyCode
+    */
+
+    
+    
+    // here event propagation occurs , dilemma on whether the owl clicked will be shown first or the consolelog
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
+    // if false, then first the alert on clicking the owl is shown , then the "ui clicking" is shown in the console
+    // true korle, console a ag a dekhiye debe then alert dialog dekhabe
+
+
+
+
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation() // if this method isn't used then owl clicked & ui clicked will both appear on the console simultaneously
+        // if this method is used then only this is shown in the console & the other parts are not shown
+    }, false)
+    
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault(); // this stops the link from propagating to www.google.com, rather stays on the same page & place
+        e.stopPropagation() // this displays google clicked in the console
+        console.log("google clicked");
+    }, false)
+   
+    
+    // Since even clicking on the bullet points in the LIs are displaying texts in the console, changes is needed
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') { // check to see if the target is an image
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            console.log(removeIt) // displayed photoshop on clicking on the image with the ID as photoshop
+            removeIt.remove()
+        }
+    })
+    
+    // removeIt.parentNode.removeChild(removeIt) , obviouly it won't work here cause of scope, written just for reference
+</script>
+</html>
