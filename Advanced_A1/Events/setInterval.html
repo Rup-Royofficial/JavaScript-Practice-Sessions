@@ -6,17 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Chai aur Javascript</h1>
+    <h1>Javascript setInterval</h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
+    let intervalId  = null;
+    // the above line leads to the execution of sayDate function every 1sec with 'hi' as the input
+
+
+
+    document.querySelector('#start').addEventListener('click', function(e) {
+        sayDate("Hello") // now this will lead to various random numbered data in the console
+        /*
+        on clicking it will display :
+        Hello 1716665344420
+        Hello 1716665354288
+        ...
+        */
+
+
+
+       //below line will only work on clicking the start button
+        intervalId = setInterval(sayDate, 1000, "hi")// every 1000ms the sayDate function is run with 'hi' as input
+        //remember after the initial run of this listener function , when at every interval of 1000ms, this runs again, only the setInterval function is executed
+        // not the sayDate function above above  or anything else, only the setInterval function runs at every interval 
+
+
+    //    console.log(intervalId)
+    })
+
+
+    document.querySelector('#stop').addEventListener('click', function(e) {
+        clearInterval(intervalId) // this will stop the setInterval function but it will require the ID of the setInterval 
+    })
+
+
+
     const sayDate = function(str){
         console.log(str, Date.now());
     }
-
-    const intervalId = setInterval(sayDate, 1000, "hi")
-
-    clearInterval(intervalId)
+    // clearInterval(intervalId)
 </script>
 </html>
