@@ -10,22 +10,29 @@
     <button id="stop">Stop</button>
 </body>
 <script>
+    // Difference b/w setTimeout & setInterval is that setTimeout runs only once, unlike setInterval which will run at every interval as specified
 
 
-
-    const sayHitesh = function(){
-        console.log("Hitesh");
+    const sayName = function(){
+        console.log("Name");
     }
     const changeText = function(){
-        document.querySelector('h1').innerHTML = "best JS series"
+        document.querySelector('h1').innerHTML = "Meh"
     }
 
-    const changeMe = setTimeout(changeText, 2000)
+    const changeMe = setTimeout(sayName, 5000) // this displays a the output of the function sayName in the console
+    const txtChange = setTimeout(changeText, 5000) // basically after 5secs, the h1 innerHTML will change to the text as shown in the above function
+    // you dont need to store it in a variable, normal setTimeout(changeText, 5000) would execute perfectly, but the downside is , u can't use clearTimeout in that scenario
+    // clearTimeout requires the Id of the setTimeout to stop it from running
 
-    
+
     document.querySelector('#stop').addEventListener('click', function(){
         clearTimeout(changeMe)
+        clearTimeout(txtChange)
         console.log("STOPPED")
+
+        // clearTimeout will stop the setTimeout from running as long as the Id of the setTimeout function is provided 
+        // & clearTimeout is run before the time limit
     })
 </script>
 </html>
