@@ -11,3 +11,12 @@ body {
     color: beige;
 }
 
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-container {
+    border: 1px solid rgb(255, 136, 0);
+}
