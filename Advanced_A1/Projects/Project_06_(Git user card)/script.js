@@ -1,3 +1,5 @@
+//!Error handling needs to be added
+
 const inputData = document.querySelector('.github-username')
 const submitBtn = document.querySelector('.submit-data')
 const cardContainer = document.querySelector('.display-card')
