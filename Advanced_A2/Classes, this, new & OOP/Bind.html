@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React, not actually React though ;D</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    // Bind is not used widely & directly used anymore, rather it is used under the hood, maintaining a layer of abstraction 
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this)) // this is how bind was used before, binding the below defined function to this click event
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
