@@ -1,3 +1,5 @@
+// Another form of Classes usage
+
 function User(email, password){
     this._email = email;
     this._password = password
@@ -21,6 +23,6 @@ function User(email, password){
 
 }
 
-const chai = new User("chai@chai.com", "chai")
+const one = new User("one@one.com", "one")
 
-console.log(chai.email);
+console.log(one.email);

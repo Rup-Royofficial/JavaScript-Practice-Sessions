@@ -1,5 +1,11 @@
+// Getters & Setters in Objects
+/*
+    This is an alternate form of using Classes, this format is rarely used
+*/
+
+// _ is imp 
 const User = {
-    _email: 'h@hc.com',
+    _email: 'a@ac.com',
     _password: "abc",
 
 
@@ -12,5 +18,5 @@ const User = {
     }
 }
 
-const tea = Object.create(User)
-console.log(tea.email);
+const coffee = Object.create(User)
+console.log(coffee.email);
