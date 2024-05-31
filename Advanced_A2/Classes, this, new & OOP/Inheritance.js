@@ -8,9 +8,10 @@ class User {
     }
 }
 
+// children(Teacher) getting accessibilty of functions inside Parent (User)
 class Teacher extends User{
     constructor(username, email, password){
-        super(username)
+        super(username) // super keyword is used to pass in value to the parent, no need to write new User(username) separately
         this.email = email
         this.password = password
     }
@@ -20,11 +21,12 @@ class Teacher extends User{
     }
 }
 
-const chai = new Teacher("chai", "chai@teacher.com", "123")
+const one = new Teacher("one", "one@number.com", "123")
+console.log(one.addCourse()) // A new course was added by one
 
-chai.logMe()
-const masalaChai = new User("masalaChai")
 
-masalaChai.logMe()
+one.logMe() // USERNAME is one
+const two = new User("two")
+two.logMe() // USERNAME is two
 
-console.log(chai instanceof User);
+console.log(one instanceof User); // true
